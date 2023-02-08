@@ -1,3 +1,4 @@
+import { User } from "../models/user";
 import { loadUsersByPage } from "../usecases/loadusersbypage";
 
 
@@ -45,7 +46,17 @@ export default {
     reloadPage,
     // para tener acceso a la pagina actual y a los usuarios
     // creo dos funciones
+
+    /**
+     * 
+     * @returns {User[]}
+     */
     getUsers: () => [...state.users], // este objeto pasa por referncia
+
+    /**
+     * 
+     * @returns {User[]}
+     */
     getCurrentPage: () => state.currentPage // este primitivo pasa por valor
 };
 

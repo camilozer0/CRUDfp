@@ -1,3 +1,4 @@
+import { renderTable } from "./presentation/rendertable/rendertable";
 import usersstore from "./store/usersstore";
 
 
@@ -9,4 +10,10 @@ export const UsersApp = async (element) => {
 
     // cuando llegue la informacion, la muestro
     await usersstore.loadNextPage();
+
+    // una vez que recibo los datos ya no necesito seguir mostrando el loading...s
+    element.innerHTML = '';
+
+
+    renderTable(element);
 }
