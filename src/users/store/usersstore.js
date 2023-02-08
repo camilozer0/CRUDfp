@@ -8,7 +8,14 @@ const state = {
 
 
 const loadNextPage = async () => {
-    await loadUsersByPage(state.currentPage + 1);
+    // aca se carga la primera pagina
+    const users = await loadUsersByPage(state.currentPage + 1);
+    // verifico que haya usuarios para mostrar, si no, que no haga nada
+    if (users.length === 0) return;
+    // si los hay aumento la pagina
+    state.currentPage += 1;
+    // actualizo el state
+    state.users = users;
 };
 
 
@@ -38,7 +45,7 @@ export default {
     reloadPage,
     // para tener acceso a la pagina actual y a los usuarios
     // creo dos funciones
-    getUser: () => [...state.users], // este objeto pasa por referncia
+    getUsers: () => [...state.users], // este objeto pasa por referncia
     getCurrentPage: () => state.currentPage // este primitivo pasa por valor
 };
 
