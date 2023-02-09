@@ -21,8 +21,14 @@ const loadNextPage = async () => {
 
 
 const loadPreviousPage = async () => {
-    throw new ('No ha sido implementado');
 
+    // si me encuentro en la pagina 1 no hago algo
+    if (state.currentPage === 1) return;
+    // si no es la pagina 1, cargo el nuevo set de usuarios y actualizo datos
+    const users = await loadUsersByPage(state.currentPage - 1);
+
+    state.currentPage -= 1;
+    state.users = users
 };
 
 

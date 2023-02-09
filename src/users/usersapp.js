@@ -1,3 +1,4 @@
+import { renderAddButton } from "./presentation/renderaddbutton/renderaddbutton";
 import { renderButtons } from "./presentation/renderbuttons/renderbuttons";
 import { renderTable } from "./presentation/rendertable/rendertable";
 import usersstore from "./store/usersstore";
@@ -18,4 +19,5 @@ export const UsersApp = async (element) => {
 
     renderTable(element);
     renderButtons(element);
+    renderAddButton(element, () => console.log('mirame amigo'));
 }
