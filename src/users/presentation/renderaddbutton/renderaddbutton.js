@@ -20,8 +20,8 @@ export const renderAddButton = (element) => {
 
         // delego el evento click del boton a que el padre me lo indique
         // en caso de que el boton fuera reutilizable
-        if (!callback) return;
-        callback();
+        // if (!callback) return;
+        // callback();
     })
 
 }
