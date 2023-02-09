@@ -1,4 +1,5 @@
 
+import { showModal } from '../rendermodal/rendermodal';
 import './renderaddbutton.css';
 
 
@@ -16,6 +17,9 @@ export const renderAddButton = (element) => {
     element.append(fabButton);
 
     fabButton.addEventListener('click', () => {
+
+        // al apretar el boton llamo la funcion para mostrar el modal
+        showModal();
 
 
         // delego el evento click del boton a que el padre me lo indique
